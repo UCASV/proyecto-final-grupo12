@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VaccineForm.ProjectContext;
 
 namespace VaccineForm.View
 {
@@ -47,15 +48,30 @@ namespace VaccineForm.View
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // falta validacion directa de base de datos y validaciones propias de la aplicacion
-            
+           
             string textPass = txtPassword.Text;
             string textEmail = txtUser.Text;
 
-            // poner condicionales
-            frmPrincipal frmPrincipal = new();
-            frmPrincipal.ShowDialog();
-            this.Close();
+            var db = new VaccinationContext();
+            int type = 2; //variable que se usara para que se haga la verificacion del id-tipo_empleado
+            var employeeslist = db.Employees.OrderBy(c => c.Id).ToList();
+            var result = employeeslist.Where(u => u.InstitutionalEmail.Equals(txtUser.Text)
+            /*continuacion de result*/     && u.Password.Equals(txtPassword.Text) && u.IdType.Equals(type)).ToList();
+            
+            if(result.Count == 0)
+            {
+                MessageBox.Show("User not found","COVID-19",
+                                MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                MessageBox.Show("Welcome dear manager", "COVID-19",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmPrincipal frmPrincipal = new();
+                frmPrincipal.ShowDialog();
+                this.Close();
+            }
+          
         }
     }
 }

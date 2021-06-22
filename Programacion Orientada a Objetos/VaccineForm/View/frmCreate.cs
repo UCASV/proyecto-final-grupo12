@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VaccineForm.ProjectContext;
 
 namespace VaccineForm.View
 {
@@ -19,8 +20,7 @@ namespace VaccineForm.View
 
         private void frmCreate_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Debe ser cambiado, aca debe ir la ventana principal, donde
-            // estaran los datos de los ciudadanos, hacer citas, etc...
+            
             this.Hide();
             frmPrincipal frmPrincipal = new frmPrincipal();
             frmPrincipal.ShowDialog();
@@ -38,9 +38,53 @@ namespace VaccineForm.View
                 frmPrincipal frmPrincipal = new();
                 frmPrincipal.ShowDialog();
             }
-            
+         
+        }
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            var db = new VaccinationContext();
+            Disease dref = (Disease)cmbDisease.SelectedItem;
+            Disease ddb = db.Set<Disease>()
+                .SingleOrDefault(s => s.Id == dref.Id);
 
+            Institution iref = (Institution)cmbInstitution.SelectedItem;
+            Institution idb = db.Set<Institution>()
+                .SingleOrDefault(s => s.Id == iref.Id);
+
+            int diseaseref = Convert.ToInt32(ddb);
+            int institutionref = Convert.ToInt32(idb);
+
+            Citizen Acitizen = new Citizen()
+            {
+                Dui = txtDUI.Text,
+                FullName = txtName.Text,
+                CitizenAddress = txtAdress.Text,
+                PhoneNumber = txtPhoneNumber.Text,
+                Email = txtEmail.Text,
+                Age = Convert.ToInt32(txtAge.Text),
+                IdDisease = diseaseref,
+                IdInstitution = institutionref
+
+            };
+            
+            db.Add(Acitizen);
+            db.SaveChanges();
+            //notificando al usuario
+            MessageBox.Show("¡Reserva realizada con exito!", "COVID-19", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
+        private void frmCreate_Load(object sender, EventArgs e)
+        {
+            //mostrando en los combobox las enfermades posibles e instituciones
+            var db = new VaccinationContext();
+            cmbDisease.DataSource = db.Diseases.ToList();
+            cmbDisease.DisplayMember = "IllnessName";
+            cmbDisease.ValueMember = "Id";
+
+            cmbInstitution.DataSource = db.Institutions.ToList();
+            cmbInstitution.DisplayMember = "NameInstitution";
+            cmbInstitution.ValueMember = "Id";
+        }
     }
 }
