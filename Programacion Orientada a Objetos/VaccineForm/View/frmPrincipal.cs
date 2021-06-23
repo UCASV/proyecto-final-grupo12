@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VaccineForm.ProjectContext;
+using VaccineForm.ViewModels;
 
 namespace VaccineForm.View
 {
@@ -27,8 +29,10 @@ namespace VaccineForm.View
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Cerrando ventana principal
-            MessageBox.Show("Are you sure you want to leave?", "COVID-19: El Salvador",
+            var window = MessageBox.Show("Are you sure you want to leave?", "COVID-19: El Salvador",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            e.Cancel = (window == DialogResult.No);
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -36,6 +40,22 @@ namespace VaccineForm.View
             //mostrando fecha para el principal
             DateTime Asesion = DateTime.Today;
             lbldate.Text = Asesion.ToString();
+
+            var people = new List<Citizen>();
+
+            dgvData.DataSource = people;
+
+            //-------------------------------
+            dgvData.DataSource = null;
+            var context = new VaccinationContext();
+
+            var newDS = context.Citizens.ToList();
+
+            var mappedDS = new List<CitizenVM>();
+
+            newDS.ForEach(e => mappedDS.Add(ProjectContextMapper.MapCitizenToCitizenVM(e)));
+
+            dgvData.DataSource = mappedDS;
         }
     }
 }
