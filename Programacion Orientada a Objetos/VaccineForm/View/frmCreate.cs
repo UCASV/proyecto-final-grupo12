@@ -43,6 +43,7 @@ namespace VaccineForm.View
         private void btnCreate_Click(object sender, EventArgs e)
         {
             var db = new VaccinationContext();
+            
             Disease dref = (Disease)cmbDisease.SelectedItem;
             Disease ddb = db.Set<Disease>()
                 .SingleOrDefault(s => s.Id == dref.Id);
@@ -51,10 +52,11 @@ namespace VaccineForm.View
             Institution idb = db.Set<Institution>()
                 .SingleOrDefault(s => s.Id == iref.Id);
 
+            //declarando variables de referencia para que se puedan guardar los id de los cmb
             int diseaseref = int.Parse(cmbDisease.SelectedValue.ToString());
             int institutionref = int.Parse(cmbInstitution.SelectedValue.ToString());
 
-            Citizen Acitizen = new Citizen()
+            Citizen Acitizen = new Citizen() //constructor 
             {
                 Dui = txtDUI.Text,
                 FullName = txtName.Text,
@@ -66,7 +68,7 @@ namespace VaccineForm.View
                 IdInstitution = institutionref
 
             };
-            
+            //guardando cambios
             db.Add(Acitizen);
             db.SaveChanges();
             //notificando al usuario
@@ -76,7 +78,7 @@ namespace VaccineForm.View
 
         private void frmCreate_Load(object sender, EventArgs e)
         {
-            //mostrando en los combobox las enfermades posibles e instituciones
+            //mostrando en los cmb las enfermades posibles e instituciones
             var db = new VaccinationContext();
             cmbDisease.DataSource = db.Diseases.ToList();
             cmbDisease.DisplayMember = "IllnessName";

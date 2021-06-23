@@ -32,6 +32,7 @@ namespace VaccineForm.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.btnCreateCitizen = new System.Windows.Forms.Button();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.lbldate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,12 +59,22 @@ namespace VaccineForm.View
             this.dgvData.Size = new System.Drawing.Size(872, 580);
             this.dgvData.TabIndex = 1;
             // 
+            // lbldate
+            // 
+            this.lbldate.AutoSize = true;
+            this.lbldate.Location = new System.Drawing.Point(12, 695);
+            this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(68, 25);
+            this.lbldate.TabIndex = 2;
+            this.lbldate.Text = "label1";
+            // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1109, 729);
+            this.Controls.Add(this.lbldate);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.btnCreateCitizen);
             this.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -72,13 +83,16 @@ namespace VaccineForm.View
             this.Name = "frmPrincipal";
             this.Text = "Principal | COVID-19";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Button btnCreateCitizen;
+        private System.Windows.Forms.Label lbldate;
     }
 }

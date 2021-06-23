@@ -54,9 +54,11 @@ namespace VaccineForm.View
 
             var db = new VaccinationContext();
             int type = 2; //variable que se usara para que se haga la verificacion del id-tipo_empleado
+            
             var employeeslist = db.Employees.OrderBy(c => c.Id).ToList();
             var result = employeeslist.Where(u => u.InstitutionalEmail.Equals(txtUser.Text)
             /*continuacion de result*/     && u.Password.Equals(txtPassword.Text) && u.IdType.Equals(type)).ToList();
+            
             
             if(result.Count == 0)
             {
@@ -70,7 +72,14 @@ namespace VaccineForm.View
                 frmPrincipal frmPrincipal = new();
                 frmPrincipal.ShowDialog();
                 this.Close();
+
+                Sesion Asesion = new Sesion()
+                {
+                    
+                };
+
             }
+
           
         }
     }
