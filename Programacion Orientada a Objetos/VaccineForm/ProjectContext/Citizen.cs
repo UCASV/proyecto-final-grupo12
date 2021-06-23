@@ -20,9 +20,11 @@ namespace VaccineForm.ProjectContext
         public int Age { get; set; }
         public int? IdDisease { get; set; }
         public int? IdInstitution { get; set; }
+        public int? IdSecEffect { get; set; }
 
         public virtual Disease IdDiseaseNavigation { get; set; }
         public virtual Institution IdInstitutionNavigation { get; set; }
+        public virtual SideEffect IdSecEffectNavigation { get; set; }
         public virtual ICollection<Appointment> Appointments { get; set; }
     }
 }

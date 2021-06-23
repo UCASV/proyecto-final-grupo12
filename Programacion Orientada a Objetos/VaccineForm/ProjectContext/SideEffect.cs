@@ -9,12 +9,12 @@ namespace VaccineForm.ProjectContext
     {
         public SideEffect()
         {
-            Appointments = new HashSet<Appointment>();
+            Citizens = new HashSet<Citizen>();
         }
 
         public int Id { get; set; }
         public string SecondaryEffect { get; set; }
 
-        public virtual ICollection<Appointment> Appointments { get; set; }
+        public virtual ICollection<Citizen> Citizens { get; set; }
     }
 }

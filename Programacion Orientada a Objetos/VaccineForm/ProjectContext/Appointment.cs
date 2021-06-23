@@ -12,10 +12,8 @@ namespace VaccineForm.ProjectContext
         public int IdCabin { get; set; }
         public DateTime? DateVaccination1 { get; set; }
         public DateTime? DateVaccination2 { get; set; }
-        public int? IdSecEffect { get; set; }
 
         public virtual Cabin IdCabinNavigation { get; set; }
         public virtual Citizen IdCitizenNavigation { get; set; }
-        public virtual SideEffect IdSecEffectNavigation { get; set; }
     }
 }

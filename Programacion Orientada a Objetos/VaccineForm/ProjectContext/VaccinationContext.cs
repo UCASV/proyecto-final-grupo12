@@ -38,12 +38,12 @@ namespace VaccineForm.ProjectContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "Modern_Spanish_CI_AS");
+            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
             modelBuilder.Entity<Appointment>(entity =>
             {
                 entity.HasKey(e => e.IdAppointment)
-                    .HasName("PK__APPOINTM__F9CC20B71B23CF01");
+                    .HasName("PK__APPOINTM__F9CC20B76AFCD87B");
 
                 entity.ToTable("APPOINTMENT");
 
@@ -65,8 +65,6 @@ namespace VaccineForm.ProjectContext
                     .IsUnicode(false)
                     .HasColumnName("id_citizen");
 
-                entity.Property(e => e.IdSecEffect).HasColumnName("id_sec_effect");
-
                 entity.HasOne(d => d.IdCabinNavigation)
                     .WithMany(p => p.Appointments)
                     .HasForeignKey(d => d.IdCabin)
@@ -78,11 +76,6 @@ namespace VaccineForm.ProjectContext
                     .HasForeignKey(d => d.IdCitizen)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_RESERVATION_citizen");
-
-                entity.HasOne(d => d.IdSecEffectNavigation)
-                    .WithMany(p => p.Appointments)
-                    .HasForeignKey(d => d.IdSecEffect)
-                    .HasConstraintName("FK_APPOINTMENT_SEC_EFFECT");
             });
 
             modelBuilder.Entity<Cabin>(entity =>
@@ -121,7 +114,7 @@ namespace VaccineForm.ProjectContext
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__D876F1BE610D45C4");
+                    .HasName("PK__CITIZEN__D876F1BE2361EC8A");
 
                 entity.ToTable("CITIZEN");
 
@@ -153,6 +146,8 @@ namespace VaccineForm.ProjectContext
 
                 entity.Property(e => e.IdInstitution).HasColumnName("id_institution");
 
+                entity.Property(e => e.IdSecEffect).HasColumnName("id_sec_effect");
+
                 entity.Property(e => e.PhoneNumber)
                     .IsRequired()
                     .HasMaxLength(9)
@@ -168,6 +163,11 @@ namespace VaccineForm.ProjectContext
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdInstitution)
                     .HasConstraintName("FK_CITIZEN_INSTITUTION");
+
+                entity.HasOne(d => d.IdSecEffectNavigation)
+                    .WithMany(p => p.Citizens)
+                    .HasForeignKey(d => d.IdSecEffect)
+                    .HasConstraintName("FK_CITIZEN_SEC_EFFECT");
             });
 
             modelBuilder.Entity<Disease>(entity =>
