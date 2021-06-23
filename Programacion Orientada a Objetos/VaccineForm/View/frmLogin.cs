@@ -60,16 +60,16 @@ namespace VaccineForm.View
             
             if(result.Count == 0)
             {
-                MessageBox.Show("User not found","COVID-19",
+                MessageBox.Show("User not found","COVID-19: El Salvador",
                                 MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("Welcome dear manager", "COVID-19",
+                MessageBox.Show("Welcome dear manager", "COVID-19: El Salvador",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 frmPrincipal frmPrincipal = new();
                 frmPrincipal.ShowDialog();
-                this.Close();
+                this.Hide();
             }
           
         }
