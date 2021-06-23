@@ -20,10 +20,16 @@ namespace VaccineForm.View
 
         private void frmCreate_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
-            this.Hide();
-            frmPrincipal frmPrincipal = new();
-            frmPrincipal.ShowDialog();
+
+            var message = MessageBox.Show("Are you sure you want to leave?", "COVID-19: El Salvador",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (message == DialogResult.Yes)
+            {
+                this.Hide();
+                frmPrincipal frmPrincipal = new();
+                frmPrincipal.ShowDialog();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -74,6 +80,7 @@ namespace VaccineForm.View
             //notificando al usuario
             MessageBox.Show("Succesful appointment!", "COVID-19: El Salvador", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+            this.Hide();
         }
 
         private void frmCreate_Load(object sender, EventArgs e)

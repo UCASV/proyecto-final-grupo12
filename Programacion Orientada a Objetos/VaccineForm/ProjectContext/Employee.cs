@@ -17,10 +17,8 @@ namespace VaccineForm.ProjectContext
         public string InstitutionalEmail { get; set; }
         public string Password { get; set; }
         public string EmployeeAddress { get; set; }
-        public int? IdCabin { get; set; }
         public int? IdType { get; set; }
 
-        public virtual Cabin IdCabinNavigation { get; set; }
         public virtual EmployeeType IdTypeNavigation { get; set; }
         public virtual ICollection<Sesion> Sesions { get; set; }
     }

@@ -10,7 +10,6 @@ namespace VaccineForm.ProjectContext
         public Cabin()
         {
             Appointments = new HashSet<Appointment>();
-            Employees = new HashSet<Employee>();
             Sesions = new HashSet<Sesion>();
         }
 
@@ -21,7 +20,6 @@ namespace VaccineForm.ProjectContext
         public string CabinEmail { get; set; }
 
         public virtual ICollection<Appointment> Appointments { get; set; }
-        public virtual ICollection<Employee> Employees { get; set; }
         public virtual ICollection<Sesion> Sesions { get; set; }
     }
 }

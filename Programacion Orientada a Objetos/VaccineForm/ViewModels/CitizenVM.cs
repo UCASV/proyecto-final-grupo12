@@ -18,8 +18,7 @@ namespace VaccineForm.ViewModels
             public int Age { get; set; }
             public int? IdDisease { get; set; }
             public int? IdInstitution { get; set; }
-            public virtual Disease IdDiseaseNavigation { get; set; }
-            public virtual Institution IdInstitutionNavigation { get; set; }
+            
         }
     
 }

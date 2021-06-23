@@ -106,9 +106,9 @@ namespace VaccineForm.View
             // 
             this.cmbInstitution.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbInstitution.FormattingEnabled = true;
-            this.cmbInstitution.Location = new System.Drawing.Point(177, 447);
+            this.cmbInstitution.Location = new System.Drawing.Point(177, 444);
             this.cmbInstitution.Name = "cmbInstitution";
-            this.cmbInstitution.Size = new System.Drawing.Size(400, 24);
+            this.cmbInstitution.Size = new System.Drawing.Size(400, 29);
             this.cmbInstitution.TabIndex = 13;
             // 
             // lblDisease
@@ -129,9 +129,9 @@ namespace VaccineForm.View
             // 
             this.cmbDisease.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDisease.FormattingEnabled = true;
-            this.cmbDisease.Location = new System.Drawing.Point(177, 385);
+            this.cmbDisease.Location = new System.Drawing.Point(177, 382);
             this.cmbDisease.Name = "cmbDisease";
-            this.cmbDisease.Size = new System.Drawing.Size(400, 24);
+            this.cmbDisease.Size = new System.Drawing.Size(400, 29);
             this.cmbDisease.TabIndex = 12;
             // 
             // lblAge
@@ -152,9 +152,9 @@ namespace VaccineForm.View
             // 
             this.txtAge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAge.Location = new System.Drawing.Point(177, 323);
+            this.txtAge.Location = new System.Drawing.Point(177, 321);
             this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(400, 24);
+            this.txtAge.Size = new System.Drawing.Size(400, 28);
             this.txtAge.TabIndex = 11;
             // 
             // lblEmail
@@ -175,9 +175,9 @@ namespace VaccineForm.View
             // 
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(177, 262);
+            this.txtEmail.Location = new System.Drawing.Point(177, 260);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(400, 24);
+            this.txtEmail.Size = new System.Drawing.Size(400, 28);
             this.txtEmail.TabIndex = 10;
             // 
             // lblTelephone
@@ -198,9 +198,9 @@ namespace VaccineForm.View
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPhoneNumber.Location = new System.Drawing.Point(177, 201);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(177, 199);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(400, 24);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(400, 28);
             this.txtPhoneNumber.TabIndex = 9;
             // 
             // lblAdress
@@ -221,9 +221,9 @@ namespace VaccineForm.View
             // 
             this.txtAdress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAdress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAdress.Location = new System.Drawing.Point(177, 140);
+            this.txtAdress.Location = new System.Drawing.Point(177, 138);
             this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(400, 24);
+            this.txtAdress.Size = new System.Drawing.Size(400, 28);
             this.txtAdress.TabIndex = 8;
             // 
             // lblName
@@ -244,9 +244,9 @@ namespace VaccineForm.View
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.Location = new System.Drawing.Point(177, 79);
+            this.txtName.Location = new System.Drawing.Point(177, 77);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(400, 24);
+            this.txtName.Size = new System.Drawing.Size(400, 28);
             this.txtName.TabIndex = 7;
             // 
             // lblDUI
@@ -265,9 +265,9 @@ namespace VaccineForm.View
             // txtDUI
             // 
             this.txtDUI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDUI.Location = new System.Drawing.Point(177, 18);
+            this.txtDUI.Location = new System.Drawing.Point(177, 16);
             this.txtDUI.Name = "txtDUI";
-            this.txtDUI.Size = new System.Drawing.Size(400, 24);
+            this.txtDUI.Size = new System.Drawing.Size(400, 28);
             this.txtDUI.TabIndex = 15;
             // 
             // btnCreate
@@ -296,7 +296,7 @@ namespace VaccineForm.View
             // 
             // frmCreate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 652);
             this.Controls.Add(this.btnCancel);

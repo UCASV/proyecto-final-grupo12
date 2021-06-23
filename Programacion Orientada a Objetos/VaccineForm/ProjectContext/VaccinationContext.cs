@@ -43,7 +43,7 @@ namespace VaccineForm.ProjectContext
             modelBuilder.Entity<Appointment>(entity =>
             {
                 entity.HasKey(e => e.IdAppointment)
-                    .HasName("PK__APPOINTM__F9CC20B76AFCD87B");
+                    .HasName("PK__APPOINTM__F9CC20B7B6F472F7");
 
                 entity.ToTable("APPOINTMENT");
 
@@ -114,7 +114,7 @@ namespace VaccineForm.ProjectContext
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__D876F1BE2361EC8A");
+                    .HasName("PK__CITIZEN__D876F1BE74855740");
 
                 entity.ToTable("CITIZEN");
 
@@ -205,8 +205,6 @@ namespace VaccineForm.ProjectContext
                     .IsUnicode(false)
                     .HasColumnName("employee_name");
 
-                entity.Property(e => e.IdCabin).HasColumnName("id_cabin");
-
                 entity.Property(e => e.IdType).HasColumnName("id_type");
 
                 entity.Property(e => e.InstitutionalEmail)
@@ -220,11 +218,6 @@ namespace VaccineForm.ProjectContext
                     .HasMaxLength(20)
                     .IsUnicode(false)
                     .HasColumnName("password_");
-
-                entity.HasOne(d => d.IdCabinNavigation)
-                    .WithMany(p => p.Employees)
-                    .HasForeignKey(d => d.IdCabin)
-                    .HasConstraintName("FK_EMPLOYEE_CABIN");
 
                 entity.HasOne(d => d.IdTypeNavigation)
                     .WithMany(p => p.Employees)

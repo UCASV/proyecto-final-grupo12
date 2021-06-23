@@ -38,8 +38,8 @@ namespace VaccineForm.View
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             //mostrando fecha para el principal
-            DateTime Asesion = DateTime.Today;
-            lbldate.Text = Asesion.ToString();
+            
+            lbldate.Text = DateTime.Now.ToString("HH:mm:ss");
 
             var people = new List<Citizen>();
 
