@@ -51,8 +51,8 @@ namespace VaccineForm.View
             Institution idb = db.Set<Institution>()
                 .SingleOrDefault(s => s.Id == iref.Id);
 
-            int diseaseref = Convert.ToInt32(ddb);
-            int institutionref = Convert.ToInt32(idb);
+            int diseaseref = int.Parse(cmbDisease.SelectedValue.ToString());
+            int institutionref = int.Parse(cmbInstitution.SelectedValue.ToString());
 
             Citizen Acitizen = new Citizen()
             {
