@@ -11,6 +11,7 @@ CREATE TABLE CITIZEN(
 	age INT NOT NULL,
 	id_disease INT,
 	id_institution INT,
+	id_sec_effect INT
 	
 );
 
@@ -37,8 +38,8 @@ CREATE TABLE APPOINTMENT(
 	id_citizen VARCHAR(10) NOT NULL,
 	id_cabin INT NOT NULL,
 	date_vaccination1 DATETIME,
-	date_vaccination2 DATETIME,
-	id_sec_effect INT
+	date_vaccination2 DATETIME
+	
 );
 
 CREATE TABLE EMPLOYEE(
@@ -76,6 +77,10 @@ ALTER TABLE CITIZEN
 ADD CONSTRAINT FK_CITIZEN_INSTITUTION 
 FOREIGN KEY (id_institution) REFERENCES INSTITUTION (id);
 
+ALTER TABLE CITIZEN
+ADD CONSTRAINT FK_CITIZEN_SEC_EFFECT
+FOREIGN KEY (id_sec_effect) REFERENCES SIDE_EFFECT (id);
+
 
 
 --RESERVATION
@@ -87,9 +92,7 @@ ALTER TABLE APPOINTMENT
 ADD CONSTRAINT FK_RESERVATION_cabin
 FOREIGN KEY (id_cabin) REFERENCES CABIN (id);
 
-ALTER TABLE APPOINTMENT 
-ADD CONSTRAINT FK_APPOINTMENT_SEC_EFFECT
-FOREIGN KEY (id_sec_effect) REFERENCES SIDE_EFFECT (id);
+
 
 --EMPLOYEE
 ALTER TABLE EMPLOYEE
@@ -167,4 +170,3 @@ INSERT INTO EMPLOYEE VALUES (008, 'Wilmer Hernandez', 'whernandez@covid.sv', 'wh
 INSERT INTO EMPLOYEE VALUES (009, 'Antonio Casas', 'acasas@covid.sv', 'acasas654', 'casa numero 3,Antiguo Cuscatlan,San Salvador', 1, 3)
 INSERT INTO EMPLOYEE VALUES (010, 'Alex Reyes', 'areyes@covid.sv', 'areyes741', 'casa numero 7,Lourdes,La Libertad', 2, 3)
 INSERT INTO EMPLOYEE VALUES (011, 'Maria Rivas', 'mrivas@covid.sv', 'mrivas357', 'casa numero 8,Izalco,Sonsonate', 3, 3)
-
