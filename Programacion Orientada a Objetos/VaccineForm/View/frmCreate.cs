@@ -22,7 +22,7 @@ namespace VaccineForm.View
         {
             
             this.Hide();
-            frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal frmPrincipal = new();
             frmPrincipal.ShowDialog();
         }
 
@@ -42,6 +42,7 @@ namespace VaccineForm.View
         }
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            // Declarando Variables de la base de datos
             var db = new VaccinationContext();
             Disease dref = (Disease)cmbDisease.SelectedItem;
             Disease ddb = db.Set<Disease>()
@@ -70,7 +71,7 @@ namespace VaccineForm.View
             db.Add(Acitizen);
             db.SaveChanges();
             //notificando al usuario
-            MessageBox.Show("¡Reserva realizada con exito!", "COVID-19", MessageBoxButtons.OK,
+            MessageBox.Show("Succesful appointment!", "COVID-19: El Salvador", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
 
