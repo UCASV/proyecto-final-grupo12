@@ -30,5 +30,12 @@ namespace VaccineForm.View
             MessageBox.Show("Are you sure you want to leave?", "COVID-19: El Salvador",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            //mostrando fecha para el principal
+            DateTime Asesion = DateTime.Today;
+            lbldate.Text = Asesion.ToString();
+        }
     }
 }
