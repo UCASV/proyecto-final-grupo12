@@ -130,7 +130,7 @@ namespace VaccineForm.View
                                     MessageBoxIcon.Information);
                                 //Finalizando ciclo de la excepcion
                                     ex = false;
-                                    Hide();
+                                    
                             }
                     }
                 }

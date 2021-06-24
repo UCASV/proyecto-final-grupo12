@@ -420,3 +420,4 @@ C:\Users\OMEN\Desktop\Proyecto_Bases_POO\Programacion Orientada a Objetos\Vaccin
 C:\Users\OMEN\Desktop\Proyecto_Bases_POO\Programacion Orientada a Objetos\VaccineForm\obj\Debug\net5.0-windows\VaccineForm.genruntimeconfig.cache
 C:\Users\OMEN\Desktop\Proyecto_Bases_POO\Programacion Orientada a Objetos\VaccineForm\obj\Debug\net5.0-windows\VaccineForm.View.frmAppointment.resources
 C:\Users\OMEN\Desktop\Ciclo 03\Proyecto_Bases_POO\Programacion Orientada a Objetos\VaccineForm\obj\Debug\net5.0-windows\VaccineForm.View.frmAppointment.resources
+C:\Users\rodri\OneDrive\Desktop\poo-bdd\Proyecto_Bases_POO\Programacion Orientada a Objetos\VaccineForm\obj\Debug\net5.0-windows\VaccineForm.View.frmAppointment.resources
