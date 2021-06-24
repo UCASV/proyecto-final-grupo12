@@ -59,8 +59,14 @@ namespace VaccineForm.View
             var employeeslist = db.Employees.OrderBy(c => c.Id).ToList();
             var result = employeeslist.Where(u => u.InstitutionalEmail.Equals(txtUser.Text)
             /*continuacion de result*/     && u.Password.Equals(txtPassword.Text) && u.IdType.Equals(type)).ToList();
+
+            //variables de referencia que estan en else
+            int cabinref = int.Parse(cmbCabin.SelectedValue.ToString());
+            int employeeref = int.Parse(txtManagerid.Text.ToString());
+            DateTime dh = DateTime.Now;
             
-            if(result.Count == 0)
+
+            if (result.Count == 0)
             {
                 MessageBox.Show("User not found","COVID-19: El Salvador",
                                 MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
@@ -69,11 +75,32 @@ namespace VaccineForm.View
             {
                 MessageBox.Show("Welcome dear manager", "COVID-19: El Salvador",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Sesion Asesion = new Sesion()
+                {
+                    IdCabin = cabinref,
+                    IdEmployee = employeeref,
+                    DateHour = dh
+                    
+                };
+                //guardando datos
+                db.Add(Asesion);
+                db.SaveChanges();
+                //-----------------------
                 frmPrincipal frmPrincipal = new();
                 frmPrincipal.ShowDialog();
                 this.Hide();
             }
           
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            //mostrando cmb 
+            var db = new VaccinationContext();
+            cmbCabin.DataSource = db.Cabins.ToList();
+            cmbCabin.DisplayMember = "CabinAddress";
+            cmbCabin.ValueMember = "Id";
         }
     }
 }
