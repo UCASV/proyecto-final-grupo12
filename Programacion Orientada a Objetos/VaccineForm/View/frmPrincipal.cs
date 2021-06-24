@@ -29,7 +29,7 @@ namespace VaccineForm.View
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Cerrando ventana principal
-            var window = MessageBox.Show("Are you sure you want to leave?", "COVID-19: El Salvador",
+            var window = MessageBox.Show("Are you sure you want to leave?", "COVID-19: ",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             e.Cancel = (window == DialogResult.No);
