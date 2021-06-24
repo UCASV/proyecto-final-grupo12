@@ -35,11 +35,11 @@ namespace VaccineForm.View
             this.picLock = new System.Windows.Forms.PictureBox();
             this.picLog = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.lblsesion = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
             this.cmbCabin = new System.Windows.Forms.ComboBox();
+            this.lblId = new System.Windows.Forms.Label();
             this.txtManagerid = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLock)).BeginInit();
@@ -89,7 +89,8 @@ namespace VaccineForm.View
             this.txtUser.Size = new System.Drawing.Size(289, 28);
             this.txtUser.TabIndex = 4;
             this.txtUser.Text = "Username";
-            this.txtUser.Click += new System.EventHandler(this.txtUser_Click);
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
+            this.txtUser.Enter += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // picLock
             // 
@@ -131,7 +132,19 @@ namespace VaccineForm.View
             this.txtPassword.Size = new System.Drawing.Size(289, 28);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.Text = "Password";
-            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::VaccineForm.Properties.Resources.loginTitle;
+            this.pictureBox1.Location = new System.Drawing.Point(99, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(289, 77);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // btnLogin
             // 
@@ -149,17 +162,6 @@ namespace VaccineForm.View
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::VaccineForm.Properties.Resources.loginTitle;
-            this.pictureBox1.Location = new System.Drawing.Point(99, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(289, 77);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblsesion
             // 
             this.lblsesion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -175,6 +177,17 @@ namespace VaccineForm.View
             this.lblsesion.Text = "Cabin";
             this.lblsesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cmbCabin
+            // 
+            this.cmbCabin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCabin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCabin.FormattingEnabled = true;
+            this.cmbCabin.Location = new System.Drawing.Point(98, 269);
+            this.cmbCabin.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbCabin.Name = "cmbCabin";
+            this.cmbCabin.Size = new System.Drawing.Size(291, 28);
+            this.cmbCabin.TabIndex = 9;
+            // 
             // lblId
             // 
             this.lblId.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -189,22 +202,11 @@ namespace VaccineForm.View
             this.lblId.Text = "Type your id";
             this.lblId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cmbCabin
-            // 
-            this.cmbCabin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbCabin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCabin.FormattingEnabled = true;
-            this.cmbCabin.Location = new System.Drawing.Point(98, 269);
-            this.cmbCabin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cmbCabin.Name = "cmbCabin";
-            this.cmbCabin.Size = new System.Drawing.Size(291, 28);
-            this.cmbCabin.TabIndex = 9;
-            // 
             // txtManagerid
             // 
             this.txtManagerid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtManagerid.Location = new System.Drawing.Point(98, 350);
-            this.txtManagerid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManagerid.Margin = new System.Windows.Forms.Padding(2);
             this.txtManagerid.Multiline = true;
             this.txtManagerid.Name = "txtManagerid";
             this.txtManagerid.Size = new System.Drawing.Size(291, 28);

@@ -34,6 +34,8 @@ namespace VaccineForm.View
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.lbldate = new System.Windows.Forms.Label();
             this.btnAppointment = new System.Windows.Forms.Button();
+            this.btnShowAppointments = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,13 +60,13 @@ namespace VaccineForm.View
             this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersWidth = 51;
             this.dgvData.RowTemplate.Height = 29;
-            this.dgvData.Size = new System.Drawing.Size(872, 580);
+            this.dgvData.Size = new System.Drawing.Size(852, 580);
             this.dgvData.TabIndex = 1;
             // 
             // lbldate
             // 
             this.lbldate.AutoSize = true;
-            this.lbldate.Location = new System.Drawing.Point(12, 695);
+            this.lbldate.Location = new System.Drawing.Point(115, 699);
             this.lbldate.Name = "lbldate";
             this.lbldate.Size = new System.Drawing.Size(58, 21);
             this.lbldate.TabIndex = 2;
@@ -82,12 +84,34 @@ namespace VaccineForm.View
             this.btnAppointment.UseVisualStyleBackColor = false;
             this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
             // 
+            // btnShowAppointments
+            // 
+            this.btnShowAppointments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(80)))));
+            this.btnShowAppointments.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShowAppointments.Location = new System.Drawing.Point(12, 341);
+            this.btnShowAppointments.Name = "btnShowAppointments";
+            this.btnShowAppointments.Size = new System.Drawing.Size(207, 96);
+            this.btnShowAppointments.TabIndex = 4;
+            this.btnShowAppointments.Text = "Show appointments";
+            this.btnShowAppointments.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 696);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Login time:";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1109, 729);
+            this.ClientSize = new System.Drawing.Size(1085, 729);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnShowAppointments);
             this.Controls.Add(this.btnAppointment);
             this.Controls.Add(this.lbldate);
             this.Controls.Add(this.dgvData);
@@ -112,5 +136,7 @@ namespace VaccineForm.View
         private System.Windows.Forms.Button btnCreateCitizen;
         private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.Button btnAppointment;
+        private System.Windows.Forms.Button btnShowAppointments;
+        private System.Windows.Forms.Label label1;
     }
 }
