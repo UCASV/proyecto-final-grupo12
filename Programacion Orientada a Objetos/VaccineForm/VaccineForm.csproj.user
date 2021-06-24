@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="View\frmAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="View\frmCreate.cs">
       <SubType>Form</SubType>
     </Compile>

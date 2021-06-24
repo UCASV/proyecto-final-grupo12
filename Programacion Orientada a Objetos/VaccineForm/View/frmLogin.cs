@@ -22,8 +22,8 @@ namespace VaccineForm.View
         {
             if (txtUser.Text == "Username")
             {
-                txtUser.ForeColor = Color.Black;
                 txtUser.Text = "";
+                txtUser.ForeColor = Color.Black;
             }
         }
 
@@ -53,18 +53,25 @@ namespace VaccineForm.View
            
             string textPass = txtPassword.Text;
             string textEmail = txtUser.Text;
-
+            string textManager = txtManagerid.Text;
             var db = new VaccinationContext();
-            int type = 2; //variable que se usara para que se haga la verificacion del id-tipo_empleado
-            var employeeslist = db.Employees.OrderBy(c => c.Id).ToList();
-            var result = employeeslist.Where(u => u.InstitutionalEmail.Equals(txtUser.Text)
-            /*continuacion de result*/     && u.Password.Equals(txtPassword.Text) && u.IdType.Equals(type)).ToList();
 
             //variables de referencia que estan en else
-            int cabinref = int.Parse(cmbCabin.SelectedValue.ToString());
-            int employeeref = int.Parse(txtManagerid.Text.ToString());
+            var cabinref = int.Parse(cmbCabin.SelectedValue.ToString());
+            var employeeref = int.Parse(txtManagerid.Text);
+
+            int type = 2; //variable que se usara para que se haga la verificacion del id-tipo_empleado
+
+            //Lista de empleados
+            var employeeslist = db.Employees.OrderBy(c => c.Id).ToList();
+
+            // Validando datos
+            var result = employeeslist.Where(u => u.InstitutionalEmail.Equals(txtUser.Text)
+                                                  && u.Password.Equals(txtPassword.Text) && u.IdType.Equals(type)
+                                                  && u.Id.Equals(employeeref)).ToList();
+
+            // Hora de inicio de sesion en la plataforma
             DateTime dh = DateTime.Now;
-            
 
             if (result.Count == 0)
             {
@@ -73,7 +80,7 @@ namespace VaccineForm.View
             }
             else
             {
-                MessageBox.Show("Welcome dear manager", "COVID-19: El Salvador",
+                MessageBox.Show($"Welcome {textEmail}", "COVID-19: El Salvador",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Sesion Asesion = new Sesion()

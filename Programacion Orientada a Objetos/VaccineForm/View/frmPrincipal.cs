@@ -57,5 +57,11 @@ namespace VaccineForm.View
 
             dgvData.DataSource = mappedDS;
         }
+
+        private void btnAppointment_Click(object sender, EventArgs e)
+        {
+            frmAppointment feAppointment = new();
+            feAppointment.ShowDialog();
+        }
     }
 }

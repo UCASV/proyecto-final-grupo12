@@ -33,6 +33,7 @@ namespace VaccineForm.View
             this.btnCreateCitizen = new System.Windows.Forms.Button();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.lbldate = new System.Windows.Forms.Label();
+            this.btnAppointment = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +55,7 @@ namespace VaccineForm.View
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Location = new System.Drawing.Point(225, 137);
             this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersWidth = 51;
             this.dgvData.RowTemplate.Height = 29;
             this.dgvData.Size = new System.Drawing.Size(872, 580);
@@ -64,16 +66,29 @@ namespace VaccineForm.View
             this.lbldate.AutoSize = true;
             this.lbldate.Location = new System.Drawing.Point(12, 695);
             this.lbldate.Name = "lbldate";
-            this.lbldate.Size = new System.Drawing.Size(46, 17);
+            this.lbldate.Size = new System.Drawing.Size(58, 21);
             this.lbldate.TabIndex = 2;
             this.lbldate.Text = "label1";
             // 
+            // btnAppointment
+            // 
+            this.btnAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(120)))), ((int)(((byte)(209)))));
+            this.btnAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAppointment.Location = new System.Drawing.Point(12, 239);
+            this.btnAppointment.Name = "btnAppointment";
+            this.btnAppointment.Size = new System.Drawing.Size(207, 96);
+            this.btnAppointment.TabIndex = 3;
+            this.btnAppointment.Text = "Add appointment";
+            this.btnAppointment.UseVisualStyleBackColor = false;
+            this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
+            // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1109, 729);
+            this.Controls.Add(this.btnAppointment);
             this.Controls.Add(this.lbldate);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.btnCreateCitizen);
@@ -96,5 +111,6 @@ namespace VaccineForm.View
         private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Button btnCreateCitizen;
         private System.Windows.Forms.Label lbldate;
+        private System.Windows.Forms.Button btnAppointment;
     }
 }
