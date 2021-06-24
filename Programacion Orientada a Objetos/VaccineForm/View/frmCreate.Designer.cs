@@ -309,7 +309,6 @@ namespace VaccineForm.View
             this.Name = "frmCreate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add citizen | COVID-19";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCreate_FormClosing);
             this.Load += new System.EventHandler(this.frmCreate_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
