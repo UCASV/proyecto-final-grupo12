@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OMEN\\Desktop\\Ciclo 03\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj": {}
+    "C:\\Users\\rodri\\OneDrive\\Desktop\\proyectofinal\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OMEN\\Desktop\\Ciclo 03\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj": {
+    "C:\\Users\\rodri\\OneDrive\\Desktop\\proyectofinal\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OMEN\\Desktop\\Ciclo 03\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj",
+        "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Desktop\\proyectofinal\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj",
         "projectName": "VaccineForm",
-        "projectPath": "C:\\Users\\OMEN\\Desktop\\Ciclo 03\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj",
-        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OMEN\\Desktop\\Ciclo 03\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\obj\\",
+        "projectPath": "C:\\Users\\rodri\\OneDrive\\Desktop\\proyectofinal\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj",
+        "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rodri\\OneDrive\\Desktop\\proyectofinal\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
