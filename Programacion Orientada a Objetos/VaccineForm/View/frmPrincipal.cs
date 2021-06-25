@@ -14,6 +14,7 @@ namespace VaccineForm.View
 {
     public partial class frmPrincipal : Form
     {
+        private bool _showData = false;
         public frmPrincipal()
         {
             InitializeComponent();
@@ -51,17 +52,55 @@ namespace VaccineForm.View
 
             var newDS = context.Citizens.ToList();
 
-            var mappedDS = new List<CitizenVM>();
+            var mappedDS = new List<CitizenVm>();
 
-            newDS.ForEach(e => mappedDS.Add(ProjectContextMapper.MapCitizenToCitizenVM(e)));
+            newDS.ForEach(e => mappedDS.Add(ProjectContextMapper.MapCitizenToCitizenVm(e)));
 
             dgvData.DataSource = mappedDS;
+
         }
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
             frmAppointment feAppointment = new();
             feAppointment.ShowDialog();
+        }
+
+        private void btnShowAppointments_Click(object sender, EventArgs e)
+        {
+            //1. Nullificar
+
+            dgvData.DataSource = null;
+
+                if (!_showData)
+                {
+                    // Cargando usuarios (dgv por defecto)
+                    using (var context = new VaccinationContext())
+                    {
+                        var newDS = context.Citizens.ToList();
+
+                        var mappedDS = new List<CitizenVm>();
+
+                        newDS.ForEach(e => mappedDS.Add(ProjectContextMapper.MapCitizenToCitizenVm(e)));
+
+                        dgvData.DataSource = mappedDS;
+                    }
+                }
+                else
+                {
+                    using (var context = new VaccinationContext())
+                    {
+                        var newDS = context.Appointments.ToList();
+
+                        var mappedDS = new List<AppointmentVm>();
+
+                        newDS.ForEach(a => mappedDS.Add(ProjectContextMapper.MapAppointmentToAppointmentVm(a)));
+
+                        dgvData.DataSource = mappedDS;
+                    }
+                }
+
+                _showData = !_showData;
         }
     }
 }

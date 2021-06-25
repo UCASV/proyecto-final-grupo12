@@ -10,10 +10,10 @@ namespace VaccineForm.ViewModels
     public static class ProjectContextMapper
     {
 
-        public static CitizenVM MapCitizenToCitizenVM(Citizen e)
+        public static CitizenVm MapCitizenToCitizenVm(Citizen e)
         {
 
-            return new CitizenVM
+            return new CitizenVm
             {
                 Dui = e.Dui,
                 FullName = e.FullName,
@@ -24,6 +24,17 @@ namespace VaccineForm.ViewModels
 
             };
 
+        }
+
+        public static AppointmentVm MapAppointmentToAppointmentVm(Appointment a)
+        {
+            return new AppointmentVm
+            {
+                Dui = a.IdCitizen,
+                IdCabin = a.IdCabin,
+                DateVaccination = a.DateVaccination1,
+                DateSecondDose = a.DateVaccination2
+            };
         }
     }
 }
