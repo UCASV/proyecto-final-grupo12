@@ -8,7 +8,7 @@ using VaccineForm.ProjectContext;
 namespace VaccineForm.ViewModels
 {
     
-        public class CitizenVM
+        public class CitizenVm
         {
             public string Dui { get; set; }
             public string FullName { get; set; }

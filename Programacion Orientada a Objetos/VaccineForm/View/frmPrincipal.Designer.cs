@@ -66,7 +66,7 @@ namespace VaccineForm.View
             // lbldate
             // 
             this.lbldate.AutoSize = true;
-            this.lbldate.Location = new System.Drawing.Point(115, 699);
+            this.lbldate.Location = new System.Drawing.Point(115, 696);
             this.lbldate.Name = "lbldate";
             this.lbldate.Size = new System.Drawing.Size(58, 21);
             this.lbldate.TabIndex = 2;
@@ -92,8 +92,9 @@ namespace VaccineForm.View
             this.btnShowAppointments.Name = "btnShowAppointments";
             this.btnShowAppointments.Size = new System.Drawing.Size(207, 96);
             this.btnShowAppointments.TabIndex = 4;
-            this.btnShowAppointments.Text = "Show appointments";
+            this.btnShowAppointments.Text = "Change Info";
             this.btnShowAppointments.UseVisualStyleBackColor = false;
+            this.btnShowAppointments.Click += new System.EventHandler(this.btnShowAppointments_Click);
             // 
             // label1
             // 
