@@ -74,7 +74,7 @@ namespace VaccineForm.View
 
                         if (message == DialogResult.OK)
                             return;
-                        
+
                     }
                     else if (phone.Length > 8 && phone.StartsWith("1") || phone.StartsWith("3") || phone.StartsWith("4")
                              || phone.StartsWith("5") || phone.StartsWith("8") || phone.StartsWith("9"))
@@ -94,44 +94,44 @@ namespace VaccineForm.View
                             return;
                     }
                     else if (Dui.Length <= 10
-                        && phone.Length <= 8 
+                        && phone.Length <= 8
                         && phone.StartsWith("7") || phone.StartsWith("6") || phone.StartsWith("2")
                         && int.Parse(txtAge.Text) >= 18 || int.Parse(txtAge.Text) <= 120)
                     {
-                            if (results.Any())
+                        if (results.Any())
+                        {
+                            var message = MessageBox.Show("The citizen already exists!", "COVID-19: Create citizen",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                            if (message == DialogResult.OK)
+                                return;
+
+                        }
+                        else
+                        {
+                            Citizen Acitizen = new Citizen() //constructor 
                             {
-                                var message= MessageBox.Show("The citizen already exists!", "COVID-19: Create citizen",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                                if (message == DialogResult.OK)
-                                    return;
-                                
-                            }
-                            else
-                            {
-                                Citizen Acitizen = new Citizen() //constructor 
-                                {
-                                    Dui = txtDUI.Text,
-                                    FullName = txtName.Text,
-                                    CitizenAddress = txtAdress.Text,
-                                    PhoneNumber = txtPhoneNumber.Text,
-                                    Email = txtEmail.Text,
-                                    Age = Convert.ToInt32(txtAge.Text),
-                                    IdDisease = diseaseref,
-                                    IdInstitution = institutionref
-                                };
-                                
-                                //Agregando ciudadano y guardando datos en base de datos
-                                db.Add(Acitizen);
-                                db.SaveChanges();
-                                //notificando al usuario
-                                var m = MessageBox.Show("The citizen has been registered!", "COVID-19: Create citizen",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                                //Finalizando ciclo de la excepcion
-                                    ex = false;
-                                    Hide();
-                            }
+                                Dui = txtDUI.Text,
+                                FullName = txtName.Text,
+                                CitizenAddress = txtAdress.Text,
+                                PhoneNumber = txtPhoneNumber.Text,
+                                Email = txtEmail.Text,
+                                Age = Convert.ToInt32(txtAge.Text),
+                                IdDisease = diseaseref,
+                                IdInstitution = institutionref
+                            };
+
+                            //Agregando ciudadano y guardando datos en base de datos
+                            db.Add(Acitizen);
+                            db.SaveChanges();
+                            //notificando al usuario
+                            var m = MessageBox.Show("The citizen has been registered!", "COVID-19: Create citizen",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                            //Finalizando ciclo de la excepcion
+                            ex = false;
+
+                        }
                     }
                 }
                 catch (Exception exception)
@@ -159,5 +159,18 @@ namespace VaccineForm.View
             cmbInstitution.ValueMember = "Id";
         }
 
+        private void frmCreate_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Regresando a la ventana principal de la aplicacion
+            var message = MessageBox.Show("Are you sure you want to leave?", "COVID-19: El Salvador",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (message == DialogResult.Yes)
+            {
+                this.Hide();
+                frmPrincipal frmPrincipal = new();
+                frmPrincipal.ShowDialog();
+            }
+        }
     }
 }
