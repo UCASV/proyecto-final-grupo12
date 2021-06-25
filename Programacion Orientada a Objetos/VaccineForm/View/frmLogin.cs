@@ -61,8 +61,8 @@ namespace VaccineForm.View
                     {
                         var message = MessageBox.Show("User not found", "COVID-19: Login",
                             MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        //if(message == DialogResult.OK)
-                            //return;
+                        if(message == DialogResult.OK)
+                            return;
                     }
                     else
                     {
