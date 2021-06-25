@@ -37,12 +37,10 @@ namespace VaccineForm.View
             this.txtDUI = new System.Windows.Forms.TextBox();
             this.lblDUI = new System.Windows.Forms.Label();
             this.tabPAppointment = new System.Windows.Forms.TabPage();
-            this.btnAddApoint = new System.Windows.Forms.Button();
-            this.lblProxDose = new System.Windows.Forms.Label();
-            this.lblProx = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblEffects = new System.Windows.Forms.Label();
             this.cmbSideEffects = new System.Windows.Forms.ComboBox();
+            this.btnAddApoint = new System.Windows.Forms.Button();
+            this.lblProx = new System.Windows.Forms.Label();
+            this.lblEffects = new System.Windows.Forms.Label();
             this.tabAppointment.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPAppointment.SuspendLayout();
@@ -52,10 +50,10 @@ namespace VaccineForm.View
             // 
             this.tabAppointment.Controls.Add(this.tabPage1);
             this.tabAppointment.Controls.Add(this.tabPAppointment);
-            this.tabAppointment.Location = new System.Drawing.Point(-3, -35);
+            this.tabAppointment.Location = new System.Drawing.Point(-3, -38);
             this.tabAppointment.Name = "tabAppointment";
             this.tabAppointment.SelectedIndex = 0;
-            this.tabAppointment.Size = new System.Drawing.Size(491, 378);
+            this.tabAppointment.Size = new System.Drawing.Size(479, 343);
             this.tabAppointment.TabIndex = 0;
             // 
             // tabPage1
@@ -68,7 +66,7 @@ namespace VaccineForm.View
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(483, 344);
+            this.tabPage1.Size = new System.Drawing.Size(471, 259);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Vaccination";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -94,7 +92,7 @@ namespace VaccineForm.View
             // 
             this.btnVaccinate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.btnVaccinate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVaccinate.Location = new System.Drawing.Point(136, 200);
+            this.btnVaccinate.Location = new System.Drawing.Point(130, 201);
             this.btnVaccinate.Name = "btnVaccinate";
             this.btnVaccinate.Size = new System.Drawing.Size(211, 77);
             this.btnVaccinate.TabIndex = 2;
@@ -122,37 +120,34 @@ namespace VaccineForm.View
             // 
             this.tabPAppointment.Controls.Add(this.cmbSideEffects);
             this.tabPAppointment.Controls.Add(this.btnAddApoint);
-            this.tabPAppointment.Controls.Add(this.lblProxDose);
             this.tabPAppointment.Controls.Add(this.lblProx);
-            this.tabPAppointment.Controls.Add(this.lblDate);
             this.tabPAppointment.Controls.Add(this.lblEffects);
             this.tabPAppointment.Location = new System.Drawing.Point(4, 30);
             this.tabPAppointment.Name = "tabPAppointment";
             this.tabPAppointment.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPAppointment.Size = new System.Drawing.Size(483, 344);
+            this.tabPAppointment.Size = new System.Drawing.Size(471, 309);
             this.tabPAppointment.TabIndex = 1;
             this.tabPAppointment.Text = "Appointment";
             this.tabPAppointment.UseVisualStyleBackColor = true;
             // 
+            // cmbSideEffects
+            // 
+            this.cmbSideEffects.FormattingEnabled = true;
+            this.cmbSideEffects.Location = new System.Drawing.Point(178, 103);
+            this.cmbSideEffects.Name = "cmbSideEffects";
+            this.cmbSideEffects.Size = new System.Drawing.Size(266, 29);
+            this.cmbSideEffects.TabIndex = 6;
+            // 
             // btnAddApoint
             // 
             this.btnAddApoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.btnAddApoint.Location = new System.Drawing.Point(124, 211);
+            this.btnAddApoint.Location = new System.Drawing.Point(122, 179);
             this.btnAddApoint.Name = "btnAddApoint";
-            this.btnAddApoint.Size = new System.Drawing.Size(222, 69);
+            this.btnAddApoint.Size = new System.Drawing.Size(227, 85);
             this.btnAddApoint.TabIndex = 5;
             this.btnAddApoint.Text = "Add Apointment";
             this.btnAddApoint.UseVisualStyleBackColor = false;
             this.btnAddApoint.Click += new System.EventHandler(this.btnAddApoint_Click);
-            // 
-            // lblProxDose
-            // 
-            this.lblProxDose.AutoSize = true;
-            this.lblProxDose.Location = new System.Drawing.Point(203, 114);
-            this.lblProxDose.Name = "lblProxDose";
-            this.lblProxDose.Size = new System.Drawing.Size(48, 21);
-            this.lblProxDose.TabIndex = 4;
-            this.lblProxDose.Text = "Date";
             // 
             // lblProx
             // 
@@ -162,37 +157,20 @@ namespace VaccineForm.View
             this.lblProx.Size = new System.Drawing.Size(0, 21);
             this.lblProx.TabIndex = 3;
             // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(19, 123);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(135, 21);
-            this.lblDate.TabIndex = 2;
-            this.lblDate.Text = "Next dose date:";
-            // 
             // lblEffects
             // 
             this.lblEffects.AutoSize = true;
-            this.lblEffects.Location = new System.Drawing.Point(19, 28);
+            this.lblEffects.Location = new System.Drawing.Point(11, 106);
             this.lblEffects.Name = "lblEffects";
             this.lblEffects.Size = new System.Drawing.Size(161, 21);
             this.lblEffects.TabIndex = 0;
             this.lblEffects.Text = "Select side effects:";
             // 
-            // cmbSideEffects
-            // 
-            this.cmbSideEffects.FormattingEnabled = true;
-            this.cmbSideEffects.Location = new System.Drawing.Point(203, 29);
-            this.cmbSideEffects.Name = "cmbSideEffects";
-            this.cmbSideEffects.Size = new System.Drawing.Size(243, 29);
-            this.cmbSideEffects.TabIndex = 6;
-            // 
             // frmAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 341);
+            this.ClientSize = new System.Drawing.Size(468, 299);
             this.Controls.Add(this.tabAppointment);
             this.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "frmAppointment";
@@ -218,9 +196,7 @@ namespace VaccineForm.View
         private System.Windows.Forms.Label lblCabin;
         private System.Windows.Forms.ComboBox cmbCabin;
         private System.Windows.Forms.Label lblEffects;
-        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblProx;
-        private System.Windows.Forms.Label lblProxDose;
         private System.Windows.Forms.Button btnAddApoint;
         private System.Windows.Forms.ComboBox cmbSideEffects;
     }

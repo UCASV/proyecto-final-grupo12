@@ -23,34 +23,29 @@ namespace VaccineForm.View
         {
             var context = new VaccinationContext();
             string Dui = txtDUI.Text;
-
+            
             bool ex = true;
-            //lista de ciudadanos para vacunarlos y hacer cita de segunda dosis
-            var listCitizen = context.Citizens.OrderBy(c => c.Dui).ToList();
-            var results = listCitizen.Where(c => c.Dui.Equals(Dui) && c.Age >= 60 
-                                                 || c.Age >= 18 && c.IdDisease != 8 || c.IdInstitution >= 2).ToList();
 
+            // Lista de ciudadanos
+            var listCitizen = context.Citizens.OrderBy(c => c.Dui).ToList();
+            var results = listCitizen.Where(c => c.Dui.Equals(Dui)).ToList();
+
+            var query = (from ct in context.Citizens
+                where ct.Dui == Dui
+                select ct).Single();
+
+            // validacion de grupos de prioridad
+            bool validation = query.Age >= 60 || query.Age >= 18 && query.IdDisease != 8 && query.IdDisease != 1 || query.IdInstitution != 1;
+
+            // lista que evitara ingresar una cita con el mismo ciudadano
             var listAppoint = context.Appointments.OrderBy(a => a.IdCitizen).ToList();
             var resultaAppoint = listAppoint.Where(a => a.IdCitizen.Equals(Dui)).ToList();
 
             DateTime date1 = DateTime.Now;
-            
+
             //id de cabina donde se aplico la vacuna
             int cabinref = int.Parse(cmbCabin.SelectedValue.ToString());
 
-            // Variables para la cita de segunda dosis del ciudadano. Generadores de una fecha aleatoria
-            DateTime startDateTime = DateTime.Now;
-            Random gen = new();
-            var range = (startDateTime.AddDays(42) - DateTime.Today).Days;
-
-            //Generador de fecha aleatoria
-            DateTime ramDateTime()
-            {
-                return startDateTime.AddDays(gen.Next(range));
-            }
-
-            string date2 = ramDateTime().ToString("dd-MM-yy//hh:mm");
-            lblProxDose.Text = date2;
 
             do
             {
@@ -65,34 +60,29 @@ namespace VaccineForm.View
                         if (mDialogResult == DialogResult.OK)
                             return;
                     }
+                    else if (results.Any() && validation)
+                    {
+                        //Agregando datos y actualizando base de datos
+                        MessageBox.Show($"DUI: {Dui} has been vaccinated ", "COVID-19: Vaccinate",
+                            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        Appointment appointmentN = new Appointment()
+                        {
+                            IdCitizen = Dui,
+                            DateVaccination1 = date1,
+                            IdCabin = cabinref,
+                        };
+
+                        context.Add(appointmentN);
+                        context.SaveChanges();
+                        tabAppointment.SelectedTab = tabPAppointment;
+                        ex = false;
+                    }
                     else
                     {
-                        if (results.Any())
-                        {
-
-                            //Agregando datos y actualizando base de datos
-
-                            Appointment appointmentN = new Appointment()
-                            {
-                                IdCitizen = Dui,
-                                DateVaccination1 = date1,
-                                IdCabin = cabinref,
-                                DateVaccination2 = ramDateTime()
-                            };
-
-                            context.Add(appointmentN);
-                            context.SaveChanges();
-
-                            MessageBox.Show($"DUI: {Dui} has been vaccinated ", "COVID-19: Vaccinate",
-                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                            tabAppointment.SelectedTab = tabPAppointment;
-
-                            ex = false;
-                        }
-                        else
-                            MessageBox.Show($"DUI: {Dui} does not belong to the priority groups ", "COVID-19: Vaccinate",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"DUI: {Dui} does not belong to the priority groups ", "COVID-19: Vaccinate",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
 
                 }
@@ -103,7 +93,7 @@ namespace VaccineForm.View
                     return;
                 }
             } while (ex);
-            
+
         }
 
         private void frmAppointment_Load(object sender, EventArgs e)
@@ -127,29 +117,47 @@ namespace VaccineForm.View
             var context = new VaccinationContext();
             var sideEffc = int.Parse(cmbSideEffects.SelectedValue.ToString());
 
-            // Validando que el usuario exista
-            var listCitizen = context.Citizens.OrderBy(c => c.Dui).ToList();
-            var results = listCitizen.Where(c => c.Dui.Equals(Dui)
-                && c.IdInstitution != 1 && c.Age >= 60 || (c.Age >= 18 && c.IdDisease != 8)).ToList();
+            // Variables para la cita de segunda dosis del ciudadano. Generadores de una fecha aleatoria
+            DateTime startDateTime = DateTime.Now.AddDays(42);
+            DateTime finishDateTime = DateTime.Now.AddDays(56);
+            Random gen = new();
+            var range = (finishDateTime - startDateTime).Days;
 
+            //Generador de fecha aleatoria
+            DateTime ramDateTime()
+            {
+                return startDateTime.AddDays(gen.Next(range));
+            }
+            
+            // Lista de ciudadanos
+            var listCitizen = context.Citizens.OrderBy(c => c.Dui).ToList();
+            var results = listCitizen.Where(c => c.Dui.Equals(Dui)).ToList();
 
             if (results.Any())
             {
-                // Añadiendo un efecto secundario al ciudadano
+
+                // Añadiendo un efecto secundario al ciudadano y fecha de la cita
                 var query = (from ct in context.Citizens
                     where ct.Dui == Dui
                     select ct).Single();
-                
+
+                var query2 = (from ap in context.Appointments
+                    where ap.IdCitizen == Dui
+                    select ap).Single();
+
                 query.IdSecEffect = sideEffc;
+                query2.DateVaccination2 = ramDateTime();
                 
                 context.SaveChanges();
 
-                MessageBox.Show("Successful appointment!", "COVID-19: Appointments",
+                MessageBox.Show($"Successful appointment! " +
+                                $" Date of second dose: {query2.DateVaccination2}", "COVID-19: Appointments",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Hide();
             }
             
         }
 
+        
     }
 }
