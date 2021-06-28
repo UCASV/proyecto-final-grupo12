@@ -16,7 +16,7 @@ Lista de los paquetes nugets instalados para la realización del programa son:
 - Microsoft.EntityFrameworkCore (la versión estable)
 - Microsoft.EntityFrameworkCore.Design (la versión estable)
 - ITextSharp (exportación de pdf)
-## EXTENCIÓN
+## EXTENSIÓN
 - AdvancedInstaller (Instalador)
 
 ## Versión EntityFramework
