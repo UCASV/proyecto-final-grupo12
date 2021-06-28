@@ -11,13 +11,13 @@ El sistema operativo usado para la realización de este proyecto ha sido Windows
 El gestor utilizado para este programa ha sido SQL SERVER.
 Cabe recalcar que para poder ejecutar este programa es necesario tener ya la base de datos hecha.
 ## PAQUETE DE NUGETS
-Lista de los paquetes nugets instalados para la realización del programa son:
+Lista de los paquetes NuGets instalados para la realización del programa son:
 - Microsoft.EntityFrameworkCore.SqlServer (versión estable)
 - Microsoft.EntityFrameworkCore (la versión estable)
 - Microsoft.EntityFrameworkCore.Design (la versión estable)
 - ITextSharp (exportación de pdf)
 ## EXTENSIÓN
-- AdvancedInstaller (Instalador)
+- Setup project (Instalador)
 
 ## Versión EntityFramework
 Versión de EntityFramework: 5.0
