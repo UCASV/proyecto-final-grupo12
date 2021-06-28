@@ -18,6 +18,7 @@ Lista de los paquetes NuGets instalados para la realización del programa son:
 - ITextSharp (exportación de pdf)
 ## EXTENSIÓN
 - Setup project (Instalador)
-
+## PATRÓN DE DISEÑO
+- ViewModel: se implementa en el DataGridView general. 
 ## Versión EntityFramework
 Versión de EntityFramework: 5.0
