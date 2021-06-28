@@ -5817,11 +5817,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\juanr\\source\\repos\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj",
+      "projectUniqueName": "C:\\Users\\juanr\\Documents\\proyecto-final-grupo12\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj",
       "projectName": "VaccineForm",
-      "projectPath": "C:\\Users\\juanr\\source\\repos\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj",
+      "projectPath": "C:\\Users\\juanr\\Documents\\proyecto-final-grupo12\\Programacion Orientada a Objetos\\VaccineForm\\VaccineForm.csproj",
       "packagesPath": "C:\\Users\\juanr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\juanr\\source\\repos\\Proyecto_Bases_POO\\Programacion Orientada a Objetos\\VaccineForm\\obj\\",
+      "outputPath": "C:\\Users\\juanr\\Documents\\proyecto-final-grupo12\\Programacion Orientada a Objetos\\VaccineForm\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\juanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
