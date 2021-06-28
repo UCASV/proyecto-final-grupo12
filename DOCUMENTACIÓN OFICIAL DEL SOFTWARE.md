@@ -8,8 +8,8 @@ En esta versión se realizó la implementación y funcionamiento de los botones 
 ## SISTEMA OPERATIVO
 El sistema operativo usado para la realización de este proyecto ha sido Windows 10
 ### Gestor de base de datos
-El gestor utilizado para este programa ha sido SQL SERVER.
-Cabe recalcar que para poder ejecutar este programa es necesario tener ya la base de datos hecha.
+El gestor utilizado para este programa ha sido [SQL Server](https://www.microsoft.com/es-es/sql-server/sql-server-downloads).
+**Cabe recalcar que para poder ejecutar este programa es necesario tener ya la base de datos creada. Encontraras el script necesario en la carpeta [Bases_de_datos](https://github.com/UCASV/proyecto-final-grupo12/blob/cde305c7c75c6649595182f7abfa57777e32cdac/Bases_de_datos/vaccination.sql)**
 ## PAQUETE DE NUGETS
 Lista de los paquetes NuGets instalados para la realización del programa son:
 - Microsoft.EntityFrameworkCore.SqlServer (versión estable)
@@ -20,5 +20,6 @@ Lista de los paquetes NuGets instalados para la realización del programa son:
 - Setup project (Instalador)
 ## PATRÓN DE DISEÑO
 - ViewModel: se implementa en el DataGridView general. 
-## Versión EntityFramework
-Versión de EntityFramework: 5.0
+## Versión .NET y .NET Framework:
+- [.NET SDK: ](https://dotnet.microsoft.com/download/dotnet/5.0) 5.0.2
+- [.NET Framework: ](https://dotnet.microsoft.com/download/dotnet-framework/net48): 4.8
