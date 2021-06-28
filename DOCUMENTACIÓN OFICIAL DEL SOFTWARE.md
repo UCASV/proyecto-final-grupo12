@@ -12,7 +12,7 @@ El gestor utilizado para este programa ha sido SQL SERVER.
 Cabe recalcar que para poder ejecutar este programa es necesario tener ya la base de datos hecha.
 ## PAQUETE DE NUGGETS
 Lista de los paquetes nuggets instalados para la realización del programa son:
-- Microsoft.EntityFramework.Core.SqlServer (versión estable)
+- Microsoft.EntityFrameworkCore.SqlServer (versión estable)
 - Microsoft.EntityFrameworkCore (la versión estable)
 - Microsoft.EntityFrameworkCore.Design (la versión estable)
 - ITextSharp (exportación de pdf)
