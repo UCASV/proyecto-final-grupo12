@@ -76,10 +76,11 @@ namespace VaccineForm.View
                             return;
                         
                     }
-                    else if (phone.Length > 8 && phone.StartsWith("1") || phone.StartsWith("3") || phone.StartsWith("4")
-                             || phone.StartsWith("5") || phone.StartsWith("8") || phone.StartsWith("9"))
+                    else if (phone.StartsWith("1") || phone.StartsWith("3") || phone.StartsWith("4")
+                             || phone.StartsWith("5") || phone.StartsWith("8") || phone.StartsWith("9") 
+                             && phone.Length > 8 || phone.Length < 8)
                     {
-                        var me = MessageBox.Show("The phone must only have 8 digits (without hyphen) or 9 digits (with hyphen)",
+                        var me = MessageBox.Show("The phone must only have 8 digits (without hyphen) and starts with 7, 8 or 2",
                             "COVID-19: El Salvador", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                         if (me == DialogResult.OK)
@@ -87,7 +88,7 @@ namespace VaccineForm.View
                     }
                     else if (Convert.ToInt32(txtAge.Text) < 18 || Convert.ToInt32(txtAge.Text) > 120)
                     {
-                        var me = MessageBox.Show("Must be of legal age (18 years or older) or or under 120 years",
+                        var me = MessageBox.Show("Must be of legal age (18 years or older) or under 120 years",
                             "COVID-19: El Salvador", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                         if (me == DialogResult.OK)
