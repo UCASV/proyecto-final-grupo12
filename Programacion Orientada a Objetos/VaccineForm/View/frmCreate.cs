@@ -66,7 +66,7 @@ namespace VaccineForm.View
             {
                 try
                 {
-                    if (Dui.Length > 10)
+                    if (Dui.Length > 10 || Dui.Length < 10)
                     {
                         var message = MessageBox.Show("The DUI must have a hyphen and it's 9 digits",
                             "COVID-19: El Salvador", MessageBoxButtons.OK,
@@ -93,8 +93,8 @@ namespace VaccineForm.View
                         if (me == DialogResult.OK)
                             return;
                     }
-                    else if (Dui.Length <= 10
-                        && phone.Length <= 8 
+                    else if (Dui.Length == 10
+                        && phone.Length == 8 
                         && phone.StartsWith("7") || phone.StartsWith("6") || phone.StartsWith("2")
                         && int.Parse(txtAge.Text) >= 18 || int.Parse(txtAge.Text) <= 120)
                     {
