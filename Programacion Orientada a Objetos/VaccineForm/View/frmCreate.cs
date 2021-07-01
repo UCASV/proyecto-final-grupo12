@@ -160,5 +160,17 @@ namespace VaccineForm.View
             cmbInstitution.ValueMember = "Id";
         }
 
+        private void frmCreate_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var message = MessageBox.Show("Are you sure you want to leave?", "COVID-19: El Salvador",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (message == DialogResult.Yes)
+            {
+                this.Hide();
+                frmPrincipal frmPrincipal = new();
+                frmPrincipal.ShowDialog();
+            }
+        }
     }
 }
