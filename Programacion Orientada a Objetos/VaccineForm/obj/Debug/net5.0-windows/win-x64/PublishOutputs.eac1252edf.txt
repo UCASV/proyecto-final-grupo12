@@ -1,0 +1,4 @@
+D:\proyecto-final-grupo12\Programacion Orientada a Objetos\VaccineForm\bin\Release\net5.0-windows\publish\VaccineForm.pdb
+D:\proyecto-final-grupo12\Programacion Orientada a Objetos\VaccineForm\bin\Release\net5.0-windows\publish\Microsoft.Data.SqlClient.SNI.dll
+D:\proyecto-final-grupo12\Programacion Orientada a Objetos\VaccineForm\bin\Release\net5.0-windows\publish\Microsoft.Data.SqlClient.SNI.pdb
+D:\proyecto-final-grupo12\Programacion Orientada a Objetos\VaccineForm\bin\Release\net5.0-windows\publish\VaccineForm.exe

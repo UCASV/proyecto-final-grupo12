@@ -29,6 +29,7 @@ namespace VaccineForm.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAppointment));
             this.tabAppointment = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblCabin = new System.Windows.Forms.Label();
@@ -63,10 +64,10 @@ namespace VaccineForm.View
             this.tabPage1.Controls.Add(this.btnVaccinate);
             this.tabPage1.Controls.Add(this.txtDUI);
             this.tabPage1.Controls.Add(this.lblDUI);
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(471, 259);
+            this.tabPage1.Size = new System.Drawing.Size(471, 314);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Vaccination";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -76,7 +77,7 @@ namespace VaccineForm.View
             this.lblCabin.AutoSize = true;
             this.lblCabin.Location = new System.Drawing.Point(37, 123);
             this.lblCabin.Name = "lblCabin";
-            this.lblCabin.Size = new System.Drawing.Size(95, 42);
+            this.lblCabin.Size = new System.Drawing.Size(77, 34);
             this.lblCabin.TabIndex = 4;
             this.lblCabin.Text = "Select the \r\ncabin:";
             // 
@@ -85,7 +86,7 @@ namespace VaccineForm.View
             this.cmbCabin.FormattingEnabled = true;
             this.cmbCabin.Location = new System.Drawing.Point(152, 123);
             this.cmbCabin.Name = "cmbCabin";
-            this.cmbCabin.Size = new System.Drawing.Size(280, 29);
+            this.cmbCabin.Size = new System.Drawing.Size(280, 24);
             this.cmbCabin.TabIndex = 3;
             // 
             // btnVaccinate
@@ -104,7 +105,7 @@ namespace VaccineForm.View
             // 
             this.txtDUI.Location = new System.Drawing.Point(152, 55);
             this.txtDUI.Name = "txtDUI";
-            this.txtDUI.Size = new System.Drawing.Size(280, 28);
+            this.txtDUI.Size = new System.Drawing.Size(280, 24);
             this.txtDUI.TabIndex = 1;
             // 
             // lblDUI
@@ -112,7 +113,7 @@ namespace VaccineForm.View
             this.lblDUI.AutoSize = true;
             this.lblDUI.Location = new System.Drawing.Point(39, 58);
             this.lblDUI.Name = "lblDUI";
-            this.lblDUI.Size = new System.Drawing.Size(93, 21);
+            this.lblDUI.Size = new System.Drawing.Size(75, 17);
             this.lblDUI.TabIndex = 0;
             this.lblDUI.Text = "Enter DUI:";
             // 
@@ -122,10 +123,10 @@ namespace VaccineForm.View
             this.tabPAppointment.Controls.Add(this.btnAddApoint);
             this.tabPAppointment.Controls.Add(this.lblProx);
             this.tabPAppointment.Controls.Add(this.lblEffects);
-            this.tabPAppointment.Location = new System.Drawing.Point(4, 30);
+            this.tabPAppointment.Location = new System.Drawing.Point(4, 25);
             this.tabPAppointment.Name = "tabPAppointment";
             this.tabPAppointment.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPAppointment.Size = new System.Drawing.Size(471, 309);
+            this.tabPAppointment.Size = new System.Drawing.Size(471, 314);
             this.tabPAppointment.TabIndex = 1;
             this.tabPAppointment.Text = "Appointment";
             this.tabPAppointment.UseVisualStyleBackColor = true;
@@ -135,7 +136,7 @@ namespace VaccineForm.View
             this.cmbSideEffects.FormattingEnabled = true;
             this.cmbSideEffects.Location = new System.Drawing.Point(178, 103);
             this.cmbSideEffects.Name = "cmbSideEffects";
-            this.cmbSideEffects.Size = new System.Drawing.Size(266, 29);
+            this.cmbSideEffects.Size = new System.Drawing.Size(266, 24);
             this.cmbSideEffects.TabIndex = 6;
             // 
             // btnAddApoint
@@ -154,7 +155,7 @@ namespace VaccineForm.View
             this.lblProx.AutoSize = true;
             this.lblProx.Location = new System.Drawing.Point(200, 211);
             this.lblProx.Name = "lblProx";
-            this.lblProx.Size = new System.Drawing.Size(0, 21);
+            this.lblProx.Size = new System.Drawing.Size(0, 17);
             this.lblProx.TabIndex = 3;
             // 
             // lblEffects
@@ -162,18 +163,22 @@ namespace VaccineForm.View
             this.lblEffects.AutoSize = true;
             this.lblEffects.Location = new System.Drawing.Point(11, 106);
             this.lblEffects.Name = "lblEffects";
-            this.lblEffects.Size = new System.Drawing.Size(161, 21);
+            this.lblEffects.Size = new System.Drawing.Size(132, 17);
             this.lblEffects.TabIndex = 0;
             this.lblEffects.Text = "Select side effects:";
             // 
             // frmAppointment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 299);
             this.Controls.Add(this.tabAppointment);
             this.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmAppointment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COVID19: Appointment";
             this.Load += new System.EventHandler(this.frmAppointment_Load);
             this.tabAppointment.ResumeLayout(false);
